@@ -1,0 +1,44 @@
+<idea-plugin version="2">
+    <id>com.service-now.plugin.idea</id>
+    <name>ServiceNow Plugin</name>
+    <version>0.1</version>
+    <vendor email="r@richardszolar.me" url="https://richardszolar.me/">Richard Szolár</vendor>
+
+    <description><![CDATA[
+      This is a packaged beta for private use. Do not redistribute without the authors consent.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Initial release of beta version. v0.1
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="131"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij"/>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="SnowGroup" text="ServiceNow Script Editor" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <action class="main.servicenow.action.DialogManagerAction" id="DialogAction" description="Download a script"
+                    text="Download the script from ServiceNow">
+                <keyboard-shortcut first-keystroke="ctrl alt G" keymap="$default"/>
+            </action>
+            <action class="main.servicenow.action.ScriptUploadAction" id="ScriptUploadAction" description="Upload a script"
+                    text="Upload the script to ServiceNow">
+                <keyboard-shortcut first-keystroke="ctrl alt U" keymap="$default"/>
+            </action>
+            <action class="main.servicenow.action.ConfigEditorAction" id="CreateConfigAction" description="Config Editor"
+                    text="Create or edit the plugin config file">
+            </action>
+        </group>
+    </actions>
+
+</idea-plugin>
