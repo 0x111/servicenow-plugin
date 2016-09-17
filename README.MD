@@ -2,6 +2,7 @@
 
 The plugin exists to simplify the developing process while you edit Servicenow scripts.
 With this plugin, you will be able to download, edit and upload the script back to your instance and then test it afterwards.
+The plugin is avaliable in the Jetbrains plugin repository too for simple installation [ServiceNow Plugin]()
 
 ### Installation
 
@@ -55,3 +56,8 @@ If there is something to be improved (which I am sure there is), then please mak
 If you have new features suggestions then please create an issue for that.
 
 The project is licensed under the MIT License.
+
+### Dependencies
+The plugin has various dependencies which I will include in the lib folder of this project.
+After you clone the repository, you need to add them manually into your sources.
+

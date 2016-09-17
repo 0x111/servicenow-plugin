@@ -1,15 +1,51 @@
 <idea-plugin version="2">
     <id>com.service-now.plugin.idea</id>
     <name>ServiceNow Plugin</name>
-    <version>0.1</version>
+    <version>0.1.1</version>
     <vendor email="r@richardszolar.me" url="https://richardszolar.me/">Richard Szolár</vendor>
 
     <description><![CDATA[
-      This is a packaged beta for private use. Do not redistribute without the authors consent.
+        <h2><a id="servicenowplugin_0"></a>servicenow-plugin</h2>
+        <p>The plugin exists to simplify the developing process while you edit Servicenow scripts.
+        With this plugin, you will be able to download, edit and upload the script back to your instance and then test it afterwards.</p>
+        <h3><a id="Installation_5"></a>Installation</h3>
+        <p>The Installation is simple. You can install the plugin in any editor of your choice from the Jetbrains family.
+        Although I think WebStorm is the best for editing javascript, but the plugin should work with IntelliJ and others too.
+        After the installation, you will see the new options in the <code>Tools</code> menu of your IDE.</p>
+        <p><img src="https://p1.picsto.re/W0Png.png" /></p>
+        <p>As you can see, you have three options. Either to Download or Upload a script or in the end, modify the config file.
+        If your config file does not exists, then if you initiate a Download or Upload of a script, the plugin will detect it and ask you to fill out the form.</p>
+        <h3><a id="Config_File_16"></a>Config File</h3>
+        <p>The Config file consits of three options for now.</p>
+        <ul>
+        <li>domain (<a href="http://dev9770870.service-now.com">dev9770870.service-now.com</a>) // Just the plain domain, not an url!!</li>
+        <li>username (admin)</li>
+        <li>password (your password)</li>
+        </ul>
+        <p><img src="https://p1.picsto.re/tadlK.png" /></p>
+        <p>If you fill out the config file with invalid information, the plugin will not work and display some kind of error message to inform you about this problem.</p>
+        <h3><a id="Usage_27"></a>Usage</h3>
+        <h4><a id="Download_29"></a>Download</h4>
+        <p>The usage is simple, like you could see before, there are shortcodes avaliable to the various tasks, so you do not need to open the Tools menu all the time.
+        If you would like to display the Download form, you use the <code>Ctrl+Alt+G</code> shortcut and the Download form will be displayed right away.</p>
+        <p><img src="https://p1.picsto.re/JKACx.png" /></p>
+        <p>There is an example for filling out the input field, but to be sure.</p>
+        <p>The first value is the tablename, which is sys_script (a.k.a. system script, a.k.a. business rule).</p>
+        <p>The second value is the field name, which is in most of the cases <code>script</code>.</p>
+        <p>The third value is the sys_id, which is the unique identifier for the given script.
+        These values are separated with the <code>:</code> delimiter.
+        If you fill these out correctly, you should be able to download the script successfully.</p>
+        <h4><a id="Upload_45"></a>Upload</h4>
+        <p>After you edit your previously downloaded script, you should be ready to upload it, to do so, you can use the <code>Ctrl+Alt+U</code> shortcut.
+        If you have your script open in the web editor of ServiceNow, then you should be able to see the changes, after the script is uploaded.</p>
+        <p>I plan to do some more improvements, like code autocomplete and others. I am still learning about this system of plugin development.
+        If there is something to be improved (which I am sure there is), then please make a pull request or raise an issue.
+        If you have new features suggestions then please create an issue for that.</p>
+        <p>The project is licensed under the MIT License.</p>
     ]]></description>
 
     <change-notes><![CDATA[
-      Initial release of beta version. v0.1
+      Fixed a bug, which was caused by the refactoring of the project.
     ]]>
     </change-notes>
 
@@ -35,7 +71,7 @@
                     text="Upload the script to ServiceNow">
                 <keyboard-shortcut first-keystroke="ctrl alt U" keymap="$default"/>
             </action>
-            <action class="main.servicenow.action.ConfigEditorAction" id="CreateConfigAction" description="Config Editor"
+            <action class="main.servicenow.action.ConfigEditorAction" id="ConfigEditorAction" description="Config Editor"
                     text="Create or edit the plugin config file">
             </action>
         </group>
