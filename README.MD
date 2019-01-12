@@ -1,5 +1,7 @@
 ## servicenow-plugin
 
+# Maintainers note: **This project is not maintained anymore. For similar functionality please refer to this project: https://sn-edit.com**
+
 The plugin exists to simplify the development process while you edit Service Now scripts.
 With this plugin, you will be able to download, edit and upload the script back to your instance and then test it afterwards.
 The plugin is avaliable in the Jetbrains plugin repository too for simple installation [Service Now Plugin]()
